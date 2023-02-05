@@ -2,6 +2,7 @@ import "./App.css";
 
 import React, { useEffect, useState } from "react";
 import logo from "./logo-pass-culture.svg";
+import Card from "./components/Card";
 
 //import dataNews from "./news.json";
 
@@ -25,7 +26,12 @@ function App() {
       </header>
       <main>
         {dataNews.news.map((el, index) => {
-          return <h1 key={index}>{el["title"]}</h1>;
+          return (
+            <h1 key={index}>
+              {el["title"]}
+              <Card></Card>
+            </h1>
+          );
         })}
       </main>
     </div>
