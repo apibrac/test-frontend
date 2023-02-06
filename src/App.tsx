@@ -21,8 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header category={""} logo={""} text={""}></Header>
-
+      <Header category={""} logo={""} text={""} />
       <main>
         {dataNews.news.map((el, index) => {
           return (
