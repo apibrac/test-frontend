@@ -11,7 +11,7 @@ interface CardProps {
 function Card(props: CardProps) {
   return (
     <figure className="card">
-      <img src={props.images[0]} alt={props.title} />
+      <img src="" alt={props.title} />
       <figcaption>
         <label className="category">{props.category}</label>
         <label className="date">{props.date}</label>
