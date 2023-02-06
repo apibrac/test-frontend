@@ -1,8 +1,8 @@
 import "./App.css";
 
 import React, { useEffect, useState } from "react";
-import logo from "./logo-pass-culture.svg";
 import Card from "./components/Card";
+import Header from "./components/Header";
 
 //import dataNews from "./news.json";
 
@@ -21,9 +21,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
+      <Header category={""} logo={""} text={""} />
+
       <main>
         {dataNews.news.map((el, index) => {
           return (
