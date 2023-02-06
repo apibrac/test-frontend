@@ -29,7 +29,13 @@ function App() {
           return (
             <h1 key={index}>
               {el["title"]}
-              <Card></Card>
+              <Card
+                title={el["title"]}
+                category={el["category"]}
+                date={el["date"]}
+                images={el["images"]}
+                text={el["text"]}
+              ></Card>
             </h1>
           );
         })}
