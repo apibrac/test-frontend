@@ -3,7 +3,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
 import Header from "./components/Header";
-
+import Dropdown from "./components/Dropdown";
 //import dataNews from "./news.json";
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header category={""} logo={""} text={""} />
+      <Dropdown placeHolder="Select..." />
       <main>
         {dataNews.news.map((el, index) => {
           return (
