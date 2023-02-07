@@ -1,10 +1,8 @@
 import "./App.css";
-
 import React, { useEffect, useState } from "react";
 import Card from "./components/Card";
-import Header from "./components/Header";
-import Dropdown from "./components/Dropdown";
-//import dataNews from "./news.json";
+
+import logo from "./images/logo-pass-culture.svg";
 
 function App() {
   const [dataNews, setDataNews] = useState({ news: [] });
@@ -21,8 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header category={""} logo={""} text={""} />
-      <Dropdown placeHolder="Select..." />
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
       <main>
         {dataNews.news.map((el, index) => {
           return (
