@@ -3,6 +3,7 @@
     border-radius: 20px;
     box-shadow: 5px 5px 15px 8px #BEBEBE;
     overflow: hidden;
+    flex-basis: 25%;
 }
 
 .card img {
