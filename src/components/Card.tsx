@@ -7,8 +7,7 @@ interface CardProps {
   images: string[];
   text: string;
 }
-//{props.images[0]}
-//{ require(props.image).default }
+
 function Card(props: CardProps) {
   return (
     <figure className="card">
