@@ -1,0 +1,10 @@
+#select {
+  display: block;
+}
+
+#news {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
