@@ -3,7 +3,6 @@
 import "./News.css";
 import { ChangeEvent, useEffect, useState } from "react";
 import Card from "./Card";
-import { useNavigate } from "react-router-dom";
 
 function News() {
   const [dataNews, setDataNews] = useState({ news: [] });
@@ -11,7 +10,6 @@ function News() {
   const [filteredNews, setFilteredNews] = useState([]);
   const [cat, setCat] = useState("");
   const [date, setDate] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("data/news.json")
@@ -66,10 +64,6 @@ function News() {
     );
   };
 
-  const handleClick = () => {
-    navigate("/form");
-  };
-
   return (
     <main>
       <div id="select">
@@ -93,11 +87,6 @@ function News() {
           <option value="2022-05-31">2022-05-31</option>
           <option value="2022-05-25">2022-05-25</option>
         </select>
-      </div>
-      <div>
-        <button id="addNews" onClick={handleClick}>
-          Ajouter news
-        </button>
       </div>
       <div id="news">
         {

@@ -3,8 +3,6 @@ import * as React from "react";
 import News from "./News";
 // **** Nécessaire à la librairie de test *****
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-// **** Nécessaire car news inclus un useNavigate ****
-import { BrowserRouter as Router } from "react-router-dom";
 
 //1. should display all news:
 //render le composant
@@ -22,14 +20,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 //expect compter le nombre de news
 
 describe("News selector", () => {
-  const props = { onSelectNews: jest.fn() };
+  const props = { onSelectNews: {
+jest.fn() };
 
   it("should display all news", async () => {
     // ***** On demande à executer la balise News mais dans le router car sinon il y a une erreur sur usenavigate ****
     render(
-      <Router>
         <News />
-      </Router>
     );
     await waitFor(() => {
       // *** Le test ici c'est de chercher le tag figure (créer par les news) ***
@@ -37,11 +34,9 @@ describe("News selector", () => {
       expect(screen.getAllByRole("figure")).toHaveLength(7);
     });
 
-    it("should display news in xxx category when user selects filter", async () => {
+  it("should display news in xxx category when user selects filter", async () => {
       await render(
-        <Router>
           <News />
-        </Router>
       );
 
       // *** on lance un evenement qui va changer la combo qui s'appelle catégorie
@@ -60,13 +55,10 @@ describe("News selector", () => {
           timeout: 4000,
         }
       );
-    });
 
-    it("should display all news when user resets filter", async () => {
+  it("should display all news when user resets filter", async () => {
       await render(
-        <Router>
           <News />
-        </Router>
       );
       // **** Même chose que le test d'au dessus mais on remet le choix à vide (donc pas de filtrage)
       await fireEvent.change(
@@ -85,5 +77,5 @@ describe("News selector", () => {
         }
       );
     });
-  });
+  };
 });
