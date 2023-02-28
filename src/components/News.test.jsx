@@ -40,7 +40,7 @@ describe("News selector", () => {
     // *** Le test ici c'est de chercher le tag h2 (créer par les news) ***
     // *** Il doit y avoir 7 h2 car il y a 7 nouvelles dans le json ***
     await waitFor(() => {
-      expect(screen.getAllByRole("figure")).toHaveLength(7);
+      expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(7);
     });
   });
 
@@ -56,7 +56,7 @@ describe("News selector", () => {
 
     // *** cette fois il n'y a que 2 nouvelles qui on la catégorie Ambassadeur
     await waitFor(() => {
-      expect(screen.getAllByRole("figure")).toHaveLength(2);
+      expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(2);
     });
   });
 
@@ -70,7 +70,7 @@ describe("News selector", () => {
     await waitFor(() => {
       expect(
         // *** cette fois on doit encore avoir 7 figure.
-        screen.getAllByRole("figure")
+        screen.getAllByRole("heading", { level: 2 })
       ).toHaveLength(2);
     });
     await userEvent.selectOptions(
@@ -80,7 +80,7 @@ describe("News selector", () => {
     await waitFor(() => {
       expect(
         // *** cette fois on doit encore avoir 7 figure.
-        screen.getAllByRole("figure")
+        screen.getAllByRole("heading", { level: 2 })
       ).toHaveLength(7);
     });
   });
