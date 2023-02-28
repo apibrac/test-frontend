@@ -69,7 +69,7 @@ describe("News selector", () => {
     );
     await waitFor(() => {
       expect(
-        // *** cette fois on doit encore avoir 7 figure.
+        // *** cette fois on doit encore avoir 7.
         screen.getAllByRole("heading", { level: 2 })
       ).toHaveLength(2);
     });
@@ -79,7 +79,7 @@ describe("News selector", () => {
     );
     await waitFor(() => {
       expect(
-        // *** cette fois on doit encore avoir 7 figure.
+        // *** cette fois on doit encore avoir 7.
         screen.getAllByRole("heading", { level: 2 })
       ).toHaveLength(7);
     });
