@@ -1,7 +1,10 @@
 import "./App.css";
 
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import logo from "./logo-pass-culture.svg";
+import News from "./components/News";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -9,6 +12,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<News />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
